@@ -92,4 +92,22 @@
     <string name="search_call_history">Search recent call history.</string>
     <string name="motion">Motion</string>
     <string name="track_steps">Track steps and activity.</string>
+    <!-- Settings - Assistant Details -->
+    <string name="assistant_registered">OpenClaw is registered as the device assistant.</string>
+    <string name="assistant_let_launch">Let Android launch OpenClaw from the assistant gesture. Google Assistant App Actions still work separately.</string>
+    
+    <!-- Settings - Location -->
+    <string name="location_off">Off</string>
+    <string name="disable_location">Disable location sharing.</string>
+    <string name="location_while_using">While Using</string>
+    <string name="only_while_open">Only while OpenClaw is open.</string>
+    <string name="precise_location">Precise Location</string>
+    <string name="use_precise_gps">Use precise GPS when available.</string>
+    
+    <!-- Settings - Other -->
+    <string name="prevent_sleep">Prevent Sleep</string>
+    <string name="keep_screen_awake">Keep screen awake while open.</string>
+    <string name="debug_canvas">Debug Canvas</string>
+    <string name="show_status_overlay">Show status overlay on canvas.</string>
 </resources>
+
