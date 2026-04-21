@@ -119,7 +119,7 @@ jobs:
         run: find . -name "*.apk" -type f -exec ls -lh {} \;
 
       - name: Create GitHub Release & upload APKs
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.tag_name }}
           name: "OpenClaw ${{ steps.version.outputs.tag_name }}"
