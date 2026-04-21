@@ -1,3 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">OpenClaw</string>
+    
+    <!-- Onboarding -->
+    <string name="trust_gateway_title">Trust this gateway?</string>
+    <string name="trust_gateway_desc">This gateway will have access to your messages, notifications, and other data. Continue only if you trust the owner and network of this gateway.</string>
+    <string name="trust_and_continue">Trust and continue</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="connect">Connect</string>
+    <string name="scan_qr_code">Scan QR code</string>
+    <string name="qr_captured">QR captured. Review endpoint below.</string>
+    <string name="advanced_setup">Advanced setup</string>
+    <string name="advanced_setup_desc">Paste setup code or manually enter host/port. Private LAN ws:// is supported; Tailscale/public hosts need wss://.</string>
+    <string name="setup_code">SETUP CODE</string>
+    <string name="paste_setup_code_hint">Paste code from `openclaw qr --setup-code-only`</string>
+    <string name="host">HOST</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="settings">Settings</string>
+    <string name="done">Done</string>
+    <string name="close">Close</string>
 </resources>
