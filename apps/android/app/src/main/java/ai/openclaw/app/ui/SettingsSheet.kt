@@ -500,9 +500,9 @@ fun SettingsSheet(viewModel: MainViewModel) {
               supportingContent = {
                 Text(
                   if (assistantRoleHeld) {
-                    "OpenClaw is registered as the device assistant."
+                    stringResource(R.string.assistant_registered)
                   } else {
-                    "Let Android launch OpenClaw from the assistant gesture. Google Assistant App Actions still work separately."
+                    stringResource(R.string.assistant_let_launch)
                   },
                   style = mobileCallout,
                 )
@@ -1124,8 +1124,8 @@ fun SettingsSheet(viewModel: MainViewModel) {
           ListItem(
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
-            headlineContent = { Text("Off", style = mobileHeadline) },
-            supportingContent = { Text("Disable location sharing.", style = mobileCallout) },
+            headlineContent = { Text(stringResource(R.string.location_off), style = mobileHeadline) },
+            supportingContent = { Text(stringResource(R.string.disable_location), style = mobileCallout) },
             trailingContent = {
               RadioButton(
                 selected = locationMode == LocationMode.Off,
@@ -1137,8 +1137,8 @@ fun SettingsSheet(viewModel: MainViewModel) {
           ListItem(
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
-            headlineContent = { Text("While Using", style = mobileHeadline) },
-            supportingContent = { Text("Only while OpenClaw is open.", style = mobileCallout) },
+            headlineContent = { Text(stringResource(R.string.location_while_using), style = mobileHeadline) },
+            supportingContent = { Text(stringResource(R.string.only_while_open), style = mobileCallout) },
             trailingContent = {
               RadioButton(
                 selected = locationMode == LocationMode.WhileUsing,
@@ -1150,8 +1150,8 @@ fun SettingsSheet(viewModel: MainViewModel) {
           ListItem(
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
-            headlineContent = { Text("Precise Location", style = mobileHeadline) },
-            supportingContent = { Text("Use precise GPS when available.", style = mobileCallout) },
+            headlineContent = { Text(stringResource(R.string.precise_location), style = mobileHeadline) },
+            supportingContent = { Text(stringResource(R.string.use_precise_gps), style = mobileCallout) },
             trailingContent = {
               Switch(
                 checked = locationPreciseEnabled,
@@ -1176,16 +1176,16 @@ fun SettingsSheet(viewModel: MainViewModel) {
           ListItem(
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
-            headlineContent = { Text("Prevent Sleep", style = mobileHeadline) },
-            supportingContent = { Text("Keep screen awake while open.", style = mobileCallout) },
+            headlineContent = { Text(stringResource(R.string.prevent_sleep), style = mobileHeadline) },
+            supportingContent = { Text(stringResource(R.string.keep_screen_awake), style = mobileCallout) },
             trailingContent = { Switch(checked = preventSleep, onCheckedChange = viewModel::setPreventSleep) },
           )
           HorizontalDivider(color = mobileBorder)
           ListItem(
             modifier = Modifier.fillMaxWidth(),
             colors = listItemColors,
-            headlineContent = { Text("Debug Canvas", style = mobileHeadline) },
-            supportingContent = { Text("Show status overlay on canvas.", style = mobileCallout) },
+            headlineContent = { Text(stringResource(R.string.debug_canvas), style = mobileHeadline) },
+            supportingContent = { Text(stringResource(R.string.show_status_overlay), style = mobileCallout) },
             trailingContent = {
               Switch(
                 checked = canvasDebugStatusEnabled,

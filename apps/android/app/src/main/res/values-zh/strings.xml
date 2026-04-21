@@ -91,5 +91,23 @@
     <string name="search_call_history">搜索最近的通话记录。</string>
     <string name="motion">运动</string>
     <string name="track_steps">追踪步数和活动。</string>
+    <!-- Settings - Assistant Details -->
+    <string name="assistant_registered">OpenClaw 已注册为设备助手。</string>
+    <string name="assistant_let_launch">让 Android 通过助手手势启动 OpenClaw。Google 助手应用操作仍然独立工作。</string>
+    
+    <!-- Settings - Location -->
+    <string name="location_off">关闭</string>
+    <string name="disable_location">禁用位置共享。</string>
+    <string name="location_while_using">仅限使用时</string>
+    <string name="only_while_open">仅在 OpenClaw 打开时。</string>
+    <string name="precise_location">精确位置</string>
+    <string name="use_precise_gps">可用时使用精确 GPS。</string>
+    
+    <!-- Settings - Other -->
+    <string name="prevent_sleep">防止睡眠</string>
+    <string name="keep_screen_awake">打开时保持屏幕唤醒。</string>
+    <string name="debug_canvas">调试画布</string>
+    <string name="show_status_overlay">在画布上显示状态覆盖层。</string>
 </resources>
+
 
