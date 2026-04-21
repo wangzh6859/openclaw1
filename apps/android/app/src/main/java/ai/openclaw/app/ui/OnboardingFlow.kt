@@ -1,5 +1,6 @@
 package ai.openclaw.app.ui
 import ai.openclaw.app.R
+import androidx.compose.ui.res.stringResource
 
 import android.Manifest
 import android.content.Context
@@ -482,7 +483,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
     AlertDialog(
       onDismissRequest = { viewModel.declineGatewayTrustPrompt() },
       containerColor = onboardingSurface,
-      title = { Text(R.string.trust_gateway_title, style = onboardingHeadlineStyle, color = onboardingText) },
+      title = { Text(stringResource(R.string.trust_gateway_title), style = onboardingHeadlineStyle, color = onboardingText) },
       text = {
         Text(
           "First-time TLS connection.\n\nVerify this SHA-256 fingerprint before trusting:\n${prompt.fingerprintSha256}",
@@ -495,7 +496,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
           onClick = { viewModel.acceptGatewayTrustPrompt() },
           colors = ButtonDefaults.textButtonColors(contentColor = onboardingAccent),
         ) {
-          Text(R.string.trust_and_continue)
+          Text(stringResource(R.string.trust_and_continue))
         }
       },
       dismissButton = {
@@ -503,7 +504,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
           onClick = { viewModel.declineGatewayTrustPrompt() },
           colors = ButtonDefaults.textButtonColors(contentColor = onboardingTextSecondary),
         ) {
-          Text(R.string.cancel)
+          Text(stringResource(R.string.cancel))
         }
       },
     )
@@ -794,7 +795,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
               shape = RoundedCornerShape(14.dp),
               colors = onboardingPrimaryButtonColors(),
             ) {
-              Text(R.string.next, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+              Text(stringResource(R.string.next), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
             }
           }
           OnboardingStep.Gateway -> {
@@ -849,7 +850,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
               shape = RoundedCornerShape(14.dp),
               colors = onboardingPrimaryButtonColors(),
             ) {
-              Text(R.string.next, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+              Text(stringResource(R.string.next), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
             }
           }
           OnboardingStep.Permissions -> {
@@ -863,7 +864,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
               shape = RoundedCornerShape(14.dp),
               colors = onboardingPrimaryButtonColors(),
             ) {
-              Text(R.string.next, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+              Text(stringResource(R.string.next), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
             }
           }
           OnboardingStep.FinalCheck -> {
@@ -874,7 +875,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
                 shape = RoundedCornerShape(14.dp),
                 colors = onboardingPrimaryButtonColors(),
               ) {
-                Text(R.string.finish, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+                Text(stringResource(R.string.finish), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
               }
             } else {
               Button(
@@ -925,7 +926,7 @@ fun OnboardingFlow(viewModel: MainViewModel, modifier: Modifier = Modifier) {
                 shape = RoundedCornerShape(14.dp),
                 colors = onboardingPrimaryButtonColors(),
               ) {
-                Text(R.string.connect, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+                Text(stringResource(R.string.connect), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
               }
             }
           }
@@ -1075,10 +1076,10 @@ private fun GatewayStep(
       shape = RoundedCornerShape(12.dp),
       colors = onboardingPrimaryButtonColors(),
     ) {
-      Text(R.string.scan_qr_code, style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
+      Text(stringResource(R.string.scan_qr_code), style = onboardingHeadlineStyle.copy(fontWeight = FontWeight.Bold))
     }
     if (!resolvedEndpoint.isNullOrBlank()) {
-      Text(R.string.qr_captured, style = onboardingCalloutStyle, color = onboardingSuccess)
+      Text(stringResource(R.string.qr_captured), style = onboardingCalloutStyle, color = onboardingSuccess)
       ResolvedEndpoint(endpoint = resolvedEndpoint)
     }
 
@@ -1095,7 +1096,7 @@ private fun GatewayStep(
         horizontalArrangement = Arrangement.SpaceBetween,
       ) {
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-          Text(R.string.advanced_setup, style = onboardingHeadlineStyle, color = onboardingText)
+          Text(stringResource(R.string.advanced_setup), style = onboardingHeadlineStyle, color = onboardingText)
           Text("Paste setup code or enter host/port manually. Private LAN ws:// is supported; Tailscale/public hosts need wss://.", style = onboardingCaption1Style, color = onboardingTextSecondary)
         }
         Icon(
@@ -1115,7 +1116,7 @@ private fun GatewayStep(
           OutlinedTextField(
             value = setupCode,
             onValueChange = onSetupCodeChange,
-            placeholder = { Text(R.string.paste_setup_code_hint, color = onboardingTextTertiary, style = onboardingBodyStyle) },
+            placeholder = { Text(stringResource(R.string.paste_setup_code_hint), color = onboardingTextTertiary, style = onboardingBodyStyle) },
             modifier = Modifier.fillMaxWidth(),
             minLines = 3,
             maxLines = 5,
@@ -1142,7 +1143,7 @@ private fun GatewayStep(
             })
           }
 
-          Text(R.string.host, style = onboardingCaption1Style.copy(letterSpacing = 0.9.sp), color = onboardingTextSecondary)
+          Text(stringResource(R.string.host), style = onboardingCaption1Style.copy(letterSpacing = 0.9.sp), color = onboardingTextSecondary)
           OutlinedTextField(
             value = manualHost,
             onValueChange = onManualHostChange,
