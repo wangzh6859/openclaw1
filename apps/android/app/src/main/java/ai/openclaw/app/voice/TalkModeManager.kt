@@ -31,6 +31,9 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import com.google.gson.JsonParser
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -1107,7 +1110,7 @@ class TalkModeManager(
         list.firstOrNull()?.let { handleTranscript(it, isFinal = false) }
       }
 
-      override fun onEvent(eventType: Int, params: Bundle?) {}
+      override fun onEvent(eventType: Int, params: Bundle?) { val json = params?.getString("json") ?: return try { val element = JsonParser.parseString(json) val obj = element.asJsonObject val method = obj["method"]?.asString ?: return val id = obj["id"]?.asString ?: return if (method == "chat.final") { val result = obj["result"]?.asString val runId = id // 匹配 pendingRunId if (pendingRunId == runId) { // 缓存结果 result?.let { completedRunTexts[runId] = it } // 标记完成 cacheRunCompletion(runId, true) // 完成等待 pendingFinal?.complete(true) pendingFinal = null pendingRunId = null Log.d(tag, "chat.final received runId=$runId result=${result?.length}") } } } catch (e: Exception) { Log.w(tag, "onEvent parse error: ${e.message}") } }
     }
 }
 
