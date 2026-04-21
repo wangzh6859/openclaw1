@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">OpenClaw</string>
+    
+    <!-- Onboarding -->
+    <string name="trust_gateway_title">信任此网关？</string>
+    <string name="trust_gateway_desc">此网关将能够访问你的消息、通知和其他数据。仅在你信任此网关的所有者和网络时继续。</string>
+    <string name="trust_and_continue">信任并继续</string>
+    <string name="cancel">取消</string>
+    <string name="next">下一步</string>
+    <string name="finish">完成</string>
+    <string name="connect">连接</string>
+    <string name="scan_qr_code">扫描二维码</string>
+    <string name="qr_captured">二维码已捕获。查看下方的终端。</string>
+    <string name="advanced_setup">高级设置</string>
+    <string name="advanced_setup_desc">粘贴设置代码或手动输入主机/端口。私有局域网支持 ws://；Tailscale/公共主机需要 wss://。</string>
+    <string name="setup_code">设置代码</string>
+    <string name="paste_setup_code_hint">粘贴 `openclaw qr --setup-code-only` 的代码</string>
+    <string name="host">主机</string>
+    
+    <!-- Common -->
+    <string name="loading">加载中...</string>
+    <string name="error">错误</string>
+    <string name="retry">重试</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="settings">设置</string>
+    <string name="done">完成</string>
+    <string name="close">关闭</string>
+</resources>

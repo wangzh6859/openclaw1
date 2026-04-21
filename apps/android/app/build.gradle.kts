@@ -65,6 +65,7 @@ android {
         applicationId = "ai.openclaw.app"
         minSdk = 31
         targetSdk = 36
+        resConfigs("en", "zh")  // 支持英文和中文
         versionCode = 2026042000
         versionName = "2026.4.20"
         ndk {
