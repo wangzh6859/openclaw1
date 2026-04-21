@@ -51,4 +51,45 @@
     <string name="default_host">10.0.2.2</string>
     <string name="token_hint">token</string>
     <string name="password_hint">password</string>
+    
+    <!-- Settings -->
+    <string name="name">Name</string>
+    <string name="default_assistant">Default Assistant</string>
+    <string name="microphone">Microphone</string>
+    <string name="photos_video">Photos and video clips (foreground only).</string>
+    <string name="camera">Camera</string>
+    <string name="system_notifications">System Notifications</string>
+    <string name="alerts_foreground">Alerts and foreground service.</string>
+    <string name="notification_listener">Notification Listener Access</string>
+    <string name="sms">SMS</string>
+    <string name="send_search_sms">Send and search SMS from this device.</string>
+    <string name="forward_notification">Forward Notification Events</string>
+    <string name="package_filter_allow">Package Filter: Allowlist</string>
+    <string name="only_listed_forwarded">Only listed package IDs are forwarded.</string>
+    <string name="package_filter_block">Package Filter: Blocklist</string>
+    <string name="all_except_listed">All packages except listed IDs are forwarded.</string>
+    <string name="search_apps">Search apps</string>
+    <string name="show_system_apps">Show System Apps</string>
+    <string name="include_system_packages">Include Android/system packages in results.</string>
+    <string name="quiet_hours">Quiet Hours</string>
+    <string name="suppress_forwarding">Suppress forwarding during a local time window.</string>
+    <string name="quiet_start">Quiet Start (HH:mm)</string>
+    <string name="quiet_start_hint">Use 24-hour HH:mm format, for example 22:00.</string>
+    <string name="quiet_end">Quiet End (HH:mm)</string>
+    <string name="quiet_end_hint">Use 24-hour HH:mm format, for example 07:00.</string>
+    <string name="save_quiet_hours">Save Quiet Hours</string>
+    <string name="max_events_minute">Max Events / Minute</string>
+    <string name="save_rate">Save Rate</string>
+    <string name="session_route_desc">Blank keeps notification events on this device\'s default notification route. Set a key only to pin forwarding into a different session.</string>
+    <string name="save_session_route">Save Session Route</string>
+    <string name="photos">Photos</string>
+    <string name="access_recent_photos">Access recent photos.</string>
+    <string name="contacts">Contacts</string>
+    <string name="search_add_contacts">Search and add contacts.</string>
+    <string name="calendar">Calendar</string>
+    <string name="read_create_events">Read and create events.</string>
+    <string name="call_log">Call Log</string>
+    <string name="search_call_history">Search recent call history.</string>
+    <string name="motion">Motion</string>
+    <string name="track_steps">Track steps and activity.</string>
 </resources>
