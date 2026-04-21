@@ -51,4 +51,45 @@
     <string name="default_host">10.0.2.2</string>
     <string name="token_hint">令牌</string>
     <string name="password_hint">密码</string>
+    <!-- Settings -->
+    <string name="name">名称</string>
+    <string name="default_assistant">默认助手</string>
+    <string name="microphone">麦克风</string>
+    <string name="photos_video">照片和视频片段（仅限前台）。</string>
+    <string name="camera">相机</string>
+    <string name="system_notifications">系统通知</string>
+    <string name="alerts_foreground">警报和前台服务。</string>
+    <string name="notification_listener">通知监听权限</string>
+    <string name="sms">短信</string>
+    <string name="send_search_sms">在此设备上发送和搜索短信。</string>
+    <string name="forward_notification">转发通知事件</string>
+    <string name="package_filter_allow">包名过滤器：白名单</string>
+    <string name="only_listed_forwarded">仅转发列出的包 ID。</string>
+    <string name="package_filter_block">包名过滤器：黑名单</string>
+    <string name="all_except_listed">转发除列出包 ID 外的所有包。</string>
+    <string name="search_apps">搜索应用</string>
+    <string name="show_system_apps">显示系统应用</string>
+    <string name="include_system_packages">结果中包含 Android/系统包。</string>
+    <string name="quiet_hours">安静时间</string>
+    <string name="suppress_forwarding">在本地时间窗口内抑制转发。</string>
+    <string name="quiet_start">安静开始时间 (HH:mm)</string>
+    <string name="quiet_start_hint">使用 24 小时制 HH:mm 格式，例如 22:00。</string>
+    <string name="quiet_end">安静结束时间 (HH:mm)</string>
+    <string name="quiet_end_hint">使用 24 小时制 HH:mm 格式，例如 07:00。</string>
+    <string name="save_quiet_hours">保存安静时间</string>
+    <string name="max_events_minute">每分钟最大事件数</string>
+    <string name="save_rate">保存速率</string>
+    <string name="session_route_desc">留空将通知事件保留在此设备的默认通知路由上。仅设置键以将转发固定到不同的会话。</string>
+    <string name="save_session_route">保存会话路由</string>
+    <string name="photos">照片</string>
+    <string name="access_recent_photos">访问最近的照片。</string>
+    <string name="contacts">联系人</string>
+    <string name="search_add_contacts">搜索和添加联系人。</string>
+    <string name="calendar">日历</string>
+    <string name="read_create_events">读取和创建事件。</string>
+    <string name="call_log">通话记录</string>
+    <string name="search_call_history">搜索最近的通话记录。</string>
+    <string name="motion">运动</string>
+    <string name="track_steps">追踪步数和活动。</string>
 </resources>
+
