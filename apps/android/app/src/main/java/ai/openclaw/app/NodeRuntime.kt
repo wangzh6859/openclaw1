@@ -280,6 +280,16 @@ class NodeRuntime(
         chat.onDisconnected(message)
         updateStatus()
         micCapture.onGatewayConnectionChanged(false)
+    
+    // 自动重连：断连后 3 秒尝试重连
+    if (message.contains("error") || message.contains("closed")) {
+      kotlinx.coroutines.GlobalScope.launch {
+        kotlinx.coroutines.delay(3000)
+        if (_isConnected.value == false && _pendingGatewayTrust.value == null) {
+          resolvePreferredGatewayEndpoint()?.let { connect(it) }
+        }
+      }
+    }
       },
       onEvent = { event, payloadJson ->
         handleGatewayEvent(event, payloadJson)
