@@ -1,4 +1,5 @@
 package ai.openclaw.app.ui
+import ai.openclaw.app.R
 
 import android.Manifest
 import android.content.Context
