@@ -36,8 +36,8 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.JsonParser
 import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.parseToJsonElement
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -1106,7 +1106,7 @@ class TalkModeManager(
         list.firstOrNull()?.let { handleTranscript(it, isFinal = false) }
       }
 
-      override fun onEvent(eventType: Int, params: Bundle?) { val jsonStr = params?.getString("json") ?: return try { val element = Json.parseToJsonElement(jsonStr) val obj = element as? JsonObject ?: return val method = obj["method"]?.toString()?.trim('"') ?: return val id = obj["id"]?.toString()?.trim('"') ?: return if (method == "chat.final") { val result = obj["result"]?.toString()?.trim('"') val runId = id if (pendingRunId == runId) { result?.let { completedRunTexts[runId] = it } cacheRunCompletion(runId, true) pendingFinal?.complete(true) pendingFinal = null pendingRunId = null Log.d(tag, "chat.final received runId=$runId result=${result?.length}") } } } catch (e: Exception) { Log.w(tag, "onEvent parse error: ${e.message}") } }
+      override fun onEvent(eventType: Int, params: Bundle?) { val jsonStr = params?.getString("json") ?: return try { val element = jsonStr.parseToJsonElement() val obj = element as? JsonObject ?: return val method = obj["method"]?.toString()?.trim('"') ?: return val id = obj["id"]?.toString()?.trim('"') ?: return if (method == "chat.final") { val result = obj["result"]?.toString()?.trim('"') val runId = id if (pendingRunId == runId) { result?.let { completedRunTexts[runId] = it } cacheRunCompletion(runId, true) pendingFinal?.complete(true) pendingFinal = null pendingRunId = null Log.d(tag, "chat.final received runId=$runId result=${result?.length}") } } } catch (e: Exception) { Log.w(tag, "onEvent parse error: ${e.message}") } }
     }
 }
 
