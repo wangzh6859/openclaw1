@@ -1107,40 +1107,10 @@ class TalkModeManager(
         list.firstOrNull()?.let { handleTranscript(it, isFinal = false) }
       }
 
-      override fun onEvent(eventType: Int, params: Bundle?) {
-        val jsonStr = params?.getString("json") ?: return
-        try {
-            // 简单解析：检查是否包含 "chat.final" 和 "result"
-            if (jsonStr.contains("\"method\":\"chat.final\"") || jsonStr.contains("\"method\": \"chat.final\"")) {
-                // 提取 runId (从 "id" 字段)
-                val idMatch = Regex("\"id\"\s*:\s*\"([^\"]+)\"").find(jsonStr)
-                val resultMatch = Regex("\"result\"\s*:\s*\"([^\"]+)\"").find(jsonStr)
-                
-                val runId = idMatch?.groupValues?.get(1)
-                val result = resultMatch?.groupValues?.get(1)
-                
-                if (runId != null && pendingRunId == runId) {
-                    // 缓存结果
-                    if (result != null) {
-                        completedRunTexts[runId] = result
-                    }
-                    // 标记完成
-                    cacheRunCompletion(runId, true)
-                    // 完成等待
-                    pendingFinal?.complete(true)
-                    pendingFinal = null
-                    pendingRunId = null
-                    Log.d(tag, "chat.final received runId=$runId resultLen=${result?.length}")
-                }
-            }
-        } catch (e: Exception) {
-            Log.w(tag, "onEvent error: ${e.message}")
-        }
-            }
-        } catch (e: Exception) {
-            Log.w(tag, "onEvent parse error: ${e.message}")
-        }
     }
+}
+
+private fun JsonElement?.asObjectOrNull(): JsonObject? = this as? JsonObject
 
 private fun JsonElement?.asStringOrNull(): String? =
   (this as? JsonPrimitive)?.takeIf { it.isString }?.content
