@@ -1108,6 +1108,10 @@ class TalkModeManager(
       }
 
     }
+
+    override fun onEvent(eventType: Int, params: Bundle?) {
+        // Stub - not used
+    }
 }
 
 private fun JsonElement?.asObjectOrNull(): JsonObject? = this as? JsonObject
