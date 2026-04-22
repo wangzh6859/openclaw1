@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -51,9 +52,9 @@ fun TalkOrbOverlay(
   val showStatus = trimmed.isNotEmpty() && trimmed != "Off"
   val phase =
     when {
-      isSpeaking -> "Speaking"
-      isListening -> "Listening"
-      else -> "Thinking"
+      isSpeaking -> stringResource(R.string.orb_speaking)
+      isListening -> stringResource(R.string.orb_listening)
+      else -> stringResource(R.string.orb_thinking)
     }
 
   Column(

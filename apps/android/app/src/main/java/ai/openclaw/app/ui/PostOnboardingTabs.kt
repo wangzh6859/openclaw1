@@ -29,6 +29,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.LaunchedEffect
@@ -53,11 +54,11 @@ private enum class HomeTab(
   val label: String,
   val icon: ImageVector,
 ) {
-  Connect(label = "Connect", icon = Icons.Default.CheckCircle),
-  Chat(label = "Chat", icon = Icons.Default.ChatBubble),
-  Voice(label = "Voice", icon = Icons.Default.RecordVoiceOver),
-  Screen(label = "Screen", icon = Icons.AutoMirrored.Filled.ScreenShare),
-  Settings(label = "Settings", icon = Icons.Default.Settings),
+  Connect(label = "connect", icon = Icons.Default.CheckCircle),
+  Chat(label = "chat", icon = Icons.Default.ChatBubble),
+  Voice(label = "voice", icon = Icons.Default.RecordVoiceOver),
+  Screen(label = "screen", icon = Icons.AutoMirrored.Filled.ScreenShare),
+  Settings(label = "settings", icon = Icons.Default.Settings),
 }
 
 private enum class StatusVisual {
@@ -277,7 +278,7 @@ private fun TopStatusBar(
             Box(modifier = Modifier.padding(4.dp))
           }
           Text(
-            text = statusText.trim().ifEmpty { "Offline" },
+            text = statusText.trim().ifEmpty { stringResource(R.string.offline) },
             style = mobileCaption1,
             color = chipText,
             maxLines = 1,
@@ -337,7 +338,13 @@ private fun BottomTabBar(
                 tint = if (active) mobileAccent else mobileTextTertiary,
               )
               Text(
-                text = tab.label,
+                text = when (tab) {
+                    HomeTab.Connect -> stringResource(R.string.tab_connect)
+                    HomeTab.Chat -> stringResource(R.string.tab_chat)
+                    HomeTab.Voice -> stringResource(R.string.tab_voice)
+                    HomeTab.Screen -> stringResource(R.string.tab_screen)
+                    HomeTab.Settings -> stringResource(R.string.tab_settings)
+                },
                 color = if (active) mobileAccent else mobileTextSecondary,
                 style = mobileCaption2.copy(fontWeight = if (active) FontWeight.Bold else FontWeight.Medium),
               )

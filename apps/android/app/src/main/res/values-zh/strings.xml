@@ -108,6 +108,62 @@
     <string name="keep_screen_awake">打开时保持屏幕唤醒。</string>
     <string name="debug_canvas">调试画布</string>
     <string name="show_status_overlay">在画布上显示状态覆盖层。</string>
+
+ <!-- Chat -->
+ <string name="chat_error">聊天错误</string>
+ <string name="type_message">输入消息…</string>
+ <string name="gateway_offline">网关离线。请先在“连接”标签页中连接。</string>
+ <string name="select_thinking_level">选择思考级别</string>
+ <string name="attach">附件</string>
+ <string name="refresh">刷新</string>
+ <string name="abort">中止</string>
+ <string name="send">发送</string>
+ <string name="thinking_off">关</string>
+ <string name="thinking_low">低</string>
+ <string name="thinking_medium">中</string>
+ <string name="thinking_high">高</string>
+ <string name="role_you">你</string>
+ <string name="role_system">系统</string>
+ <string name="role_openclaw">OpenClaw</string>
+ <string name="tools">工具</string>
+ <string name="running_tools">正在运行工具…</string>
+ <string name="more_count">… 还有 %1$d 个</string>
+ <string name="unsupported_attachment">不支持的附件</string>
+ <string name="thinking_dots">思考中…</string>
+ <string name="openclaw_live">OpenClaw · 实时</string>
+
+ <!-- Bottom Tabs -->
+ <string name="tab_connect">连接</string>
+ <string name="tab_chat">聊天</string>
+ <string name="tab_voice">语音</string>
+ <string name="tab_screen">屏幕</string>
+ <string name="tab_settings">设置</string>
+ <string name="offline">离线</string>
+
+ <!-- Voice -->
+ <string name="tap_mic_to_start">点击麦克风开始</string>
+ <string name="each_pause_sends">每次停顿将自动发送一轮对话。</string>
+ <string name="mute_speaker">静音扬声器</string>
+ <string name="unmute_speaker">取消扬声器静音</string>
+ <string name="speaker_on">扬声器</string>
+ <string name="speaker_muted">已静音</string>
+ <string name="turn_mic_off">关闭麦克风</string>
+ <string name="turn_mic_on">打开麦克风</string>
+ <string name="voice_sending">发送中</string>
+ <string name="voice_cooldown">冷却中</string>
+ <string name="voice_listening">聆听中</string>
+ <string name="voice_mic_off">麦克风关闭</string>
+ <string name="queued_count">%1$d 条排队中</string>
+ <string name="mic_required">语音模式需要麦克风权限。</string>
+ <string name="mic_blocked">麦克风被禁止。请打开应用设置启用。</string>
+ <string name="open_settings">打开设置</string>
+ <string name="listening_response">正在聆听回复…</string>
+ <string name="openclaw_thinking">OpenClaw 正在思考…</string>
+
+ <!-- Talk Orb -->
+ <string name="orb_speaking">说话中</string>
+ <string name="orb_listening">聆听中</string>
+ <string name="orb_thinking">思考中</string>
 </resources>
 
 

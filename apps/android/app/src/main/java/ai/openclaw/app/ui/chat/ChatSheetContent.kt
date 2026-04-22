@@ -15,6 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -243,7 +244,7 @@ private fun ChatErrorRail(errorText: String) {
   ) {
     Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
       Text(
-        text = "CHAT ERROR",
+        text = stringResource(R.string.chat_error),
         style = mobileCaption2.copy(letterSpacing = 0.6.sp),
         color = mobileDanger,
       )
