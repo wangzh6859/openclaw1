@@ -1109,7 +1109,6 @@ class TalkModeManager(
 
     }
 
-    override fun onEvent(eventType: Int, params: Bundle!) {
         // Stub - not used
     }
 }
