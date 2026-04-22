@@ -1129,3 +1129,9 @@ private fun JsonElement?.asBooleanOrNull(): Boolean? {
     else -> null
   }
 }
+
+// Temporary stub for onEvent to satisfy interface
+@Suppress("unused", "UNUSED_PARAMETER")
+private fun stubOnEvent() {
+    // onEvent implementation removed due to corruption
+}

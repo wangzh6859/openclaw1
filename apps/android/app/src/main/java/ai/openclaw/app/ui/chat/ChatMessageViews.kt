@@ -229,9 +229,9 @@ private fun bubbleStyle(role: String): ChatBubbleStyle {
 
 private fun roleLabel(role: String): String {
   return when (role) {
-    "user" -> stringResource(R.string.role_you)
-    "system" -> stringResource(R.string.role_system)
-    else -> stringResource(R.string.role_openclaw)
+    "user" -> "You"
+    "system" -> "System"
+    else -> "OpenClaw"
   }
 }
 
