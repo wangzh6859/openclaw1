@@ -1052,7 +1052,7 @@ class TalkModeManager(
 
   private val listener =
     object : RecognitionListener {
-      override fun onReadyForSpeech(params: Bundle?) {
+      override fun onReadyForSpeech(params: Bundle!) {
         if (_isEnabled.value) {
           _statusText.value = if (_isListening.value) "Listening" else _statusText.value
         }
@@ -1096,20 +1096,20 @@ class TalkModeManager(
         scheduleRestart(delayMs = 600)
       }
 
-      override fun onResults(results: Bundle?) {
+      override fun onResults(results: Bundle!) {
         val list = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION).orEmpty()
         list.firstOrNull()?.let { handleTranscript(it, isFinal = true) }
         scheduleRestart()
       }
 
-      override fun onPartialResults(partialResults: Bundle?) {
+      override fun onPartialResults(partialResults: Bundle!) {
         val list = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION).orEmpty()
         list.firstOrNull()?.let { handleTranscript(it, isFinal = false) }
       }
 
     }
 
-    override fun onEvent(eventType: Int, params: Bundle?) {
+    override fun onEvent(eventType: Int, params: Bundle!) {
         // Stub - not used
     }
 }
