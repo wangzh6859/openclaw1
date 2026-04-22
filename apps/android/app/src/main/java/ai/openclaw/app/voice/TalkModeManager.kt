@@ -26,12 +26,14 @@ import kotlin.coroutines.coroutineContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
@@ -39,8 +41,6 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonObject
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class TalkModeManager(
   private val context: Context,
@@ -1052,7 +1052,7 @@ class TalkModeManager(
 
   private val listener =
     object : RecognitionListener {
-      override fun onReadyForSpeech(params: Bundle!) {
+      override fun onReadyForSpeech(params: Bundle?) {
         if (_isEnabled.value) {
           _statusText.value = if (_isListening.value) "Listening" else _statusText.value
         }
@@ -1096,20 +1096,18 @@ class TalkModeManager(
         scheduleRestart(delayMs = 600)
       }
 
-      override fun onResults(results: Bundle!) {
+      override fun onResults(results: Bundle?) {
         val list = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION).orEmpty()
         list.firstOrNull()?.let { handleTranscript(it, isFinal = true) }
         scheduleRestart()
       }
 
-      override fun onPartialResults(partialResults: Bundle!) {
+      override fun onPartialResults(partialResults: Bundle?) {
         val list = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION).orEmpty()
         list.firstOrNull()?.let { handleTranscript(it, isFinal = false) }
       }
 
-    }
-
-        // Stub - not used
+      override fun onEvent(eventType: Int, params: Bundle?) {}
     }
 }
 
@@ -1131,10 +1129,4 @@ private fun JsonElement?.asBooleanOrNull(): Boolean? {
     "false", "no", "0" -> false
     else -> null
   }
-}
-
-// Temporary stub for onEvent to satisfy interface
-@Suppress("unused", "UNUSED_PARAMETER")
-private fun stubOnEvent() {
-    // onEvent implementation removed due to corruption
 }
