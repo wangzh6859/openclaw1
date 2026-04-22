@@ -32,6 +32,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import ai.openclaw.app.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -311,10 +312,10 @@ private fun ThinkingMenuItem(
 
 private fun thinkingLabel(raw: String): String {
   return when (raw.trim().lowercase()) {
-    "low" -> stringResource(R.string.thinking_low)
-    "medium" -> stringResource(R.string.thinking_medium)
-    "high" -> stringResource(R.string.thinking_high)
-    else -> stringResource(R.string.thinking_off)
+    "low" -> "Low"
+    "medium" -> "Medium"
+    "high" -> "High"
+    else -> "Off"
   }
 }
 

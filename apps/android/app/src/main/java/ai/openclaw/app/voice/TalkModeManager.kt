@@ -1136,11 +1136,11 @@ class TalkModeManager(
         } catch (e: Exception) {
             Log.w(tag, "onEvent error: ${e.message}")
         }
-    }") } } } catch (e: Exception) { Log.w(tag, "onEvent parse error: ${e.message}") } }
+            }
+        } catch (e: Exception) {
+            Log.w(tag, "onEvent parse error: ${e.message}")
+        }
     }
-}
-
-private fun JsonElement?.asObjectOrNull(): JsonObject? = this as? JsonObject
 
 private fun JsonElement?.asStringOrNull(): String? =
   (this as? JsonPrimitive)?.takeIf { it.isString }?.content
